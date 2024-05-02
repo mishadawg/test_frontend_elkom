@@ -36,11 +36,11 @@ export default new Vuex.Store({
           lastname: splittedPayload[0],
           fullname: splittedPayload[1],
         }
-        state._currentUser = state._fullUsersData.filter(
+        state._currentUser = state._fullUsersData.find(
           (item) => 
             item?.fullname === state._filter.fullname || 
             item?.lastname === state._filter.lastname
-        )[0]
+        )
       }else{
         state._filter = null;
       }
