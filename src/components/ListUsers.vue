@@ -31,10 +31,6 @@ export default {
             required: true,
         },
     },
-    // data: () => ({
-    //     currentUser: null,
-    // }),
-    // emits:['chooseUser'],
     computed: {
         currentUser: function() {
             return this.$store.getters?.currentUser;
@@ -42,9 +38,7 @@ export default {
     },
     methods: {
         chooseCurrentUser(data){
-            // this.currentUser = data;
             this.$store.commit("chooseCurrentUser", data);
-            // this.$emit('chooseUser', data);
         },
     },
 };

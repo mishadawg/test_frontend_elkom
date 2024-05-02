@@ -16,25 +16,7 @@ export default {
     ListUsers,
     CardUser,
   },
-  data: () => ({
-    // currentUser: null,
-  }),
-  methods: {
-    // getCurrentUser(data){
-    //   this.currentUser = data;
-    // },
-    // getFilterData(data){
-    //   return data?.filter(
-    //     (item) => 
-    //       item?.fullname === this.$store.getters?.filterValue.fullname || 
-    //       item?.lastname === this.$store.getters?.filterValue.lastname
-    //   );
-    // },
-  },
   computed: {
-    // haveFilter: function(){
-    //   return !!this.$store.getters?.filterValue;
-    // },
     currentUser: function() {
       return this.$store.getters?.currentUser;
     },
