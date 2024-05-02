@@ -12,7 +12,7 @@
                     <v-list-item-title>{{ `${user.lastname} ${user.firstname}` }}</v-list-item-title>
                 </v-list-item-content>
                 <v-list-item-avatar>
-                    <v-img :src="'https://cdn.vuetifyjs.com/images/lists/2.jpg'"></v-img>
+                    <v-img :src="user.image"></v-img>
                 </v-list-item-avatar>
             </v-list-item>
         </v-list>

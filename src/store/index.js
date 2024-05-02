@@ -11,10 +11,22 @@ export default new Vuex.Store({
     _fullUsersData: null,
     _filter: null,
     _currentUser: null,
+    _collectionOfAvatars: [
+      'https://cdn.vuetifyjs.com/images/lists/1.jpg',
+      'https://cdn.vuetifyjs.com/images/lists/2.jpg',
+      'https://cdn.vuetifyjs.com/images/lists/3.jpg',
+      'https://cdn.vuetifyjs.com/images/lists/4.jpg',
+      'https://cdn.vuetifyjs.com/images/lists/5.jpg',
+    ]
   },
   mutations: {
     mutateData(state, payload) {
-      state._fullUsersData = payload.data;
+      state._fullUsersData = payload.data?.map((item) => {
+        item.image = state._collectionOfAvatars[
+          Math.floor(Math.random() * state._collectionOfAvatars.length)
+        ];
+        return item;
+      })
     },
     goFilter(state, payload) {
       state._filter = payload;
