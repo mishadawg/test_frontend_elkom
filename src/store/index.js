@@ -10,6 +10,7 @@ export default new Vuex.Store({
   state: {
     _fullUsersData: null,
     _filter: null,
+    _currentUser: null,
   },
   mutations: {
     mutateData(state, payload) {
@@ -23,9 +24,17 @@ export default new Vuex.Store({
           lastname: splittedPayload[0],
           fullname: splittedPayload[1],
         }
+        state._currentUser = state._fullUsersData.filter(
+          (item) => 
+            item?.fullname === state._filter.fullname || 
+            item?.lastname === state._filter.lastname
+        )[0]
       }else{
         state._filter = null;
       }
+    },
+    chooseCurrentUser(state, payload) {
+      state._currentUser = payload;
     },
   },
   actions: {
@@ -38,5 +47,6 @@ export default new Vuex.Store({
   getters: {
     fullUsersData: (state) => state._fullUsersData,
     filterValue: (state) => state._filter,
+    currentUser: (state) => state._currentUser,
   },
 });

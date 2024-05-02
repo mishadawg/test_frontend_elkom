@@ -1,5 +1,6 @@
 <template>
     <v-autocomplete
+        label="Поиск"
         v-model="filterUser"
         :items="usersItems"
         clearable
