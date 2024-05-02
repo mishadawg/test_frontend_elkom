@@ -9,10 +9,23 @@ const dataUrl = "https://fakerapi.it/api/v1/persons?_locale=ru_RU&_quantity=10";
 export default new Vuex.Store({
   state: {
     _fullUsersData: null,
+    _filter: null,
   },
   mutations: {
     mutateData(state, payload) {
       state._fullUsersData = payload.data;
+    },
+    goFilter(state, payload) {
+      state._filter = payload;
+      if(payload){
+        let splittedPayload = payload?.split(' ');
+        state._filter = {
+          lastname: splittedPayload[0],
+          fullname: splittedPayload[1],
+        }
+      }else{
+        state._filter = null;
+      }
     },
   },
   actions: {
@@ -24,5 +37,6 @@ export default new Vuex.Store({
   },
   getters: {
     fullUsersData: (state) => state._fullUsersData,
+    filterValue: (state) => state._filter,
   },
 });
