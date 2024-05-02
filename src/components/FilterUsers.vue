@@ -1,13 +1,10 @@
 <template>
-    <div>
-        <pre>{{ filterUser }}</pre>
-        <v-autocomplete
-            v-model="filterUser"
-            :items="usersItems"
-            clearable
-            @change="handlerFilter"
-        ></v-autocomplete>
-    </div>
+    <v-autocomplete
+        v-model="filterUser"
+        :items="usersItems"
+        clearable
+        @change="handlerFilter"
+    ></v-autocomplete>
 </template>
 <script>
 export default {
