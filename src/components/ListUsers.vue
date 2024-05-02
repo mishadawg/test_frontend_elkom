@@ -1,7 +1,7 @@
 <template>
-    <div class="list-users">
+    <div class="list-users-container typical-block-container">
         <FilterUsers />
-        <v-list class="list-users-container">
+        <v-list class="list-users typical-block-style pa-0">
             <v-list-item 
                 :class="{'active': currentUser === user}" 
                 v-for="(user,index) in users" 
@@ -51,14 +51,6 @@ export default {
 </script>
 <style lang="scss">
 .list-users{
-    max-width: 490px;
-    width: 100%;
-    &-container{
-        border: 1px solid black !important;
-        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75) !important;
-        border-radius: 14px !important;
-        padding: 0px;
-    }
     .v-list-item{
         cursor: pointer !important;
         transition: .2s linear;

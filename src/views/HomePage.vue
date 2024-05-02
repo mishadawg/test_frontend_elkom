@@ -1,11 +1,9 @@
 <template>
   <v-container>
-    <div class="home-page-container">
-      <div class="home-page-listAndCard">
-        <ListUsers :users="usersList" v-if="usersList"></ListUsers>
-        <CardUser :user="currentUser" v-if="currentUser"></CardUser>
-      </div>
-    </div>
+    <v-row class="justify-center ga-4 my-4">
+      <ListUsers :users="usersList" v-if="usersList"></ListUsers>
+      <CardUser :user="currentUser" v-if="currentUser"></CardUser>
+    </v-row>
   </v-container>
 </template>
 <script>
@@ -47,12 +45,3 @@ export default {
   
 };
 </script>
-<style lang="scss">
-.home-page{
-  &-listAndCard{
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-  }
-}
-</style>
